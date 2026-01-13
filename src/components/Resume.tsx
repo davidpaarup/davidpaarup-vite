@@ -17,19 +17,19 @@ const Resume: React.FC = () => {
     {
       title: 'Fabricante de muebles (2025)',
       description: 'Sitio web que podría ser utilizado por un fabricante de muebles.',
-      tags: ['Builder.io'],
+      tags: ['Builder.io', 'Vercel'],
       url: 'https://furniture-maker.vercel.app/'
     },
     {
       title: 'Portafolio de fotografía (2025)',
       description: 'Sitio web que podría ser usado por un fotógrafo.',
-      tags: ['Builder.io'],
+      tags: ['Builder.io', 'Vercel'],
       url: 'https://photography-portfolio-nine-nu.vercel.app/'
     },
     {
       title: 'Urban Sketchers (2025)',
       description: 'Sitio web que podría ser usado por un grupo de Urban Sketchers.',
-      tags: ['Builder.io', 'Sanity', 'Vite', 'React'],
+      tags: ['Builder.io', 'Sanity', 'Vite', 'React', 'Vercel'],
       url: 'https://urban-sketchers.vercel.app/'
     },
     {
