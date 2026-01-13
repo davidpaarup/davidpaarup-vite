@@ -67,7 +67,7 @@ const Resume: React.FC = () => {
           </div>
         </div>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          Atención al detalle y entrego calidad. Siempre en proceso de aprendizaje.
+          Atención al detalle y entrega de calidad. Siempre en proceso de aprendizaje.
         </p>
       </section>
 
