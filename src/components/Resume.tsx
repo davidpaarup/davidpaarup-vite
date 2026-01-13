@@ -27,6 +27,12 @@ const Resume: React.FC = () => {
       url: 'https://urban-sketchers.vercel.app/'
     },
     {
+      title: 'Esta web (2025)',
+      description: 'Sitio web en el que me expongo al público.',
+      tags: ['Vite', 'React', 'Vercel'],
+      url: 'https://davidpaarup.com/'
+    },
+    {
       title: 'Alex Lomart (2019)',
       description: 'Portafolio de un fotógrafo profesional.',
       tags: ['Wordpress'],
