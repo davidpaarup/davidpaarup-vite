@@ -46,6 +46,14 @@ const Resume: React.FC = () => {
           />
         </div>
         <h1 className="text-5xl font-bold tracking-tight mb-4">Desarrollador web full stack</h1>
+        <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-gray-400 mb-6">
+          <div className="flex items-center gap-2">
+            <span>1992</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span>Valencia, España</span>
+          </div>
+        </div>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
           Desarrollador full stack freelance que valora el detalle y la calidad. Siempre en proceso de aprendizaje.
         </p>
