@@ -17,19 +17,19 @@ const Resume: React.FC = () => {
     {
       title: 'Fabricante de muebles (2025)',
       description: 'Sitio web que podría ser utilizado por un fabricante de muebles.',
-      tags: ['Builder.io', 'Vercel'],
+      tags: ['Builder.io', 'Vercel', 'Vite', 'React', 'Tailwind'],
       url: 'https://furniture-maker.vercel.app/'
     },
     {
       title: 'Portafolio de fotografía (2025)',
       description: 'Sitio web que podría ser usado por un fotógrafo.',
-      tags: ['Builder.io', 'Vercel'],
+      tags: ['Builder.io', 'Vercel', 'Strapi', 'React', 'Tailwind'],
       url: 'https://photography-portfolio-nine-nu.vercel.app/'
     },
     {
       title: 'Urban Sketchers (2025)',
       description: 'Sitio web que podría ser usado por un grupo de Urban Sketchers.',
-      tags: ['Builder.io', 'Sanity', 'Vite', 'React', 'Vercel'],
+      tags: ['Builder.io', 'Sanity', 'Vite', 'React', 'Vercel', 'Tailwind'],
       url: 'https://urban-sketchers.vercel.app/'
     },
     {
@@ -41,7 +41,7 @@ const Resume: React.FC = () => {
     {
       title: 'Alex Lomart (2019)',
       description: 'Portafolio de un fotógrafo profesional.',
-      tags: ['Wordpress'],
+      tags: ['Wordpress', 'Google Cloud'],
       url: 'https://alexlomart.com/'
     }
   ];
