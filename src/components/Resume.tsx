@@ -1,6 +1,39 @@
 import React from 'react';
 
 const Resume: React.FC = () => {
+  const projects = [
+    {
+      title: 'AI prompt (2025)',
+      description: 'Plataforma que permite al usuario chatear con una interfaz que tiene acceso a parte del ecosistema Microsoft del usuario.',
+      tags: ['Next.js', 'Better Auth', 'Semantic Kernel', 'Microsoft Graph'],
+      url: 'http://ai-prompt-mice.vercel.app/'
+    },
+    {
+      title: 'Fabricante de muebles (2025)',
+      description: 'Sitio web que podría ser utilizado por un fabricante de muebles.',
+      tags: ['Builder.io'],
+      url: 'https://furniture-maker.vercel.app/'
+    },
+    {
+      title: 'Portafolio de fotografía (2025)',
+      description: 'Sitio web que podría ser usado por un fotógrafo.',
+      tags: ['Builder.io'],
+      url: 'https://photography-portfolio-nine-nu.vercel.app/'
+    },
+    {
+      title: 'Urban Sketchers (2025)',
+      description: 'Sitio web que podría ser usado por un grupo de Urban Sketchers.',
+      tags: ['Builder.io'],
+      url: 'https://urban-sketchers.vercel.app/'
+    },
+    {
+      title: 'Alex Lomart (2019)',
+      description: 'Portafolio de un fotógrafo profesional.',
+      tags: ['Wordpress'],
+      url: 'https://alexlomart.com/'
+    }
+  ];
+
   return (
     <div className="max-w-4xl mx-auto px-6 pt-32 pb-20">
       {/* Hero Section */}
@@ -14,7 +47,7 @@ const Resume: React.FC = () => {
         </div>
         <h1 className="text-5xl font-bold tracking-tight mb-4">Desarrollador web full stack</h1>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          Desarrollador full stack freelance que valora el detalle y la calidad. Siempre intento aprender y mejorar.
+          Desarrollador full stack freelance que valora el detalle y la calidad. Siempre en proceso de aprendizaje.
         </p>
       </section>
 
@@ -126,57 +159,25 @@ const Resume: React.FC = () => {
       <section className="mb-20">
         <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Proyectos Destacados</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="group border border-gray-100 p-8 rounded-2xl hover:bg-gray-50 transition-colors">
-            <h3 className="text-xl font-semibold mb-2">AI prompt (2025)</h3>
-            <p className="text-gray-500 text-sm mb-4 leading-relaxed">
-
-              Plataforma que permite al usuario chatear con una interfaz que tiene acceso
-              a parte del ecosistema Microsoft del usuario.
-
-            </p>
-            <div className="flex gap-4">
-              <span className="text-xs font-medium text-gray-400">Next.js</span>
-              <span className="text-xs font-medium text-gray-400">Better Auth</span>
-              <span className="text-xs font-medium text-gray-400">Semantic Kernel</span>
-              <span className="text-xs font-medium text-gray-400">Microsoft Graph</span>
-            </div>
-          </div>
-          <div className="group border border-gray-100 p-8 rounded-2xl hover:bg-gray-50 transition-colors">
-            <h3 className="text-xl font-semibold mb-2">Fabricante de muebles (2025)</h3>
-            <p className="text-gray-500 text-sm mb-4 leading-relaxed">
-              Sitio web que podría ser utilizado por un fabricante de muebles.
-            </p>
-            <div className="flex gap-4">
-              <span className="text-xs font-medium text-gray-400">Builder.io</span>
-            </div>
-          </div>
-          <div className="group border border-gray-100 p-8 rounded-2xl hover:bg-gray-50 transition-colors">
-            <h3 className="text-xl font-semibold mb-2">Portafolio de fotografía (2025)</h3>
-            <p className="text-gray-500 text-sm mb-4 leading-relaxed">
-              Sitio web que podría ser usado por un fotógrafo.
-            </p>
-            <div className="flex gap-4">
-              <span className="text-xs font-medium text-gray-400">Builder.io</span>
-            </div>
-          </div>
-          <div className="group border border-gray-100 p-8 rounded-2xl hover:bg-gray-50 transition-colors">
-            <h3 className="text-xl font-semibold mb-2">Urban Sketchers (2025)</h3>
-            <p className="text-gray-500 text-sm mb-4 leading-relaxed">
-              Sitio web que podría ser usado por un grupo de Urban Sketchers.
-            </p>
-            <div className="flex gap-4">
-              <span className="text-xs font-medium text-gray-400">Builder.io</span>
-            </div>
-          </div>
-          <div className="group border border-gray-100 p-8 rounded-2xl hover:bg-gray-50 transition-colors">
-            <h3 className="text-xl font-semibold mb-2">Alex Lomart (2019)</h3>
-            <p className="text-gray-500 text-sm mb-4 leading-relaxed">
-              Portafolio de un fotógrafo profesional.
-            </p>
-            <div className="flex gap-4">
-              <span className="text-xs font-medium text-gray-400">Wordpress</span>
-            </div>
-          </div>
+          {projects.map((project, index) => (
+            <a 
+              key={index}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group border border-gray-100 p-8 rounded-2xl hover:bg-gray-50 transition-colors block cursor-pointer"
+            >
+              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+              <p className="text-gray-500 text-sm mb-4 leading-relaxed">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                {project.tags.map(tag => (
+                  <span key={tag} className="text-xs font-medium text-gray-400">{tag}</span>
+                ))}
+              </div>
+            </a>
+          ))}
         </div>
       </section>
     </div>
