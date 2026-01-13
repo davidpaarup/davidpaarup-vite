@@ -45,7 +45,7 @@ const Resume: React.FC = () => {
             className="w-48 h-48 rounded-full object-cover transition-all duration-500 border border-gray-100 shadow-sm"
           />
         </div>
-        <h1 className="text-5xl font-bold tracking-tight mb-4">Desarrollador web full stack</h1>
+        <h1 className="text-5xl font-bold tracking-tight mb-4">Desarrollador web full stack freelance</h1>
         <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-gray-400 mb-6">
           <div className="flex items-center gap-2">
             <span>1992</span>
@@ -55,7 +55,7 @@ const Resume: React.FC = () => {
           </div>
         </div>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          Desarrollador full stack freelance que valora el detalle y la calidad. Siempre en proceso de aprendizaje.
+          Atención al detalle y entrego calidad. Siempre en proceso de aprendizaje.
         </p>
       </section>
 
