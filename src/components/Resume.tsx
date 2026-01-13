@@ -78,7 +78,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">Desarrollador full stack</h3>
               <span className="text-sm text-gray-400">2022 — 2025</span>
             </div>
-            <p className="text-gray-600 mb-4">LetsReg (Oslo, Noruega)</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://letsreg.com"} className="underline">LetsReg</a> (Oslo, Noruega)</p>
             <p className="text-gray-500 leading-relaxed">
               Diseño y desarrollo de la aplicación web y servicios usando Angular, .NET, MSSQL, Kubernetes y Azure.
             </p>
@@ -88,7 +88,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">Ingeniero de software</h3>
               <span className="text-sm text-gray-400">2019 — 2022</span>
             </div>
-            <p className="text-gray-600 mb-4">Danske Bank (Copenhague, Dinamarca)</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a> (Copenhague, Dinamarca)</p>
             <p className="text-gray-500 leading-relaxed">
               Diseño y desarrollo de una aplicación web y servicios relacionados con la sostenibilidad usando Angular,
               .NET y MSSQL.
@@ -99,7 +99,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">Ingeniero de software</h3>
               <span className="text-sm text-gray-400">2018 — 2019</span>
             </div>
-            <p className="text-gray-600 mb-4">IIC (tiempo parcial) (Madrid, España)</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a> (tiempo parcial) (Madrid, España)</p>
             <p className="text-gray-500 leading-relaxed">
               Creación de módulos a partir de scripts de Bash extensos utilizando Python, convirtiéndolos en
               microservicios orquestados por Kubernetes.
@@ -110,7 +110,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">Desarrollador de software</h3>
               <span className="text-sm text-gray-400">2018</span>
             </div>
-            <p className="text-gray-600 mb-4">Flexxible (prácticas) (Madrid, España)</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.flexxible.com"} className="underline">Flexxible</a> (prácticas) (Madrid, España)</p>
             <p className="text-gray-500 leading-relaxed">
               Automatización de la configuración y despliegue de máquinas virtuales usando Chef y VMware.
             </p>
@@ -127,7 +127,7 @@ const Resume: React.FC = () => {
               <h3 className="text-lg font-semibold">Grado en Ingeniería Informática</h3>
               <span className="text-sm text-gray-400">2015 — 2029</span>
             </div>
-            <p className="text-gray-500">UAM (Madrid)</p>
+            <p className="text-gray-500"><a target={"_blank"} href={"https://www.uam.es"} className="underline">UAM</a> (Madrid)</p>
           </div>
         </div>
       </section>
