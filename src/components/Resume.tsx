@@ -5,6 +5,13 @@ const Resume: React.FC = () => {
     <div className="max-w-4xl mx-auto px-6 pt-32 pb-20">
       {/* Hero Section */}
       <section className="mb-20">
+        <div className="mb-8">
+          <img 
+            src="https://omjnwfhxgcqx4oig.public.blob.vercel-storage.com/perfil.jpeg"
+            alt="David Paarup" 
+            className="w-48 h-48 rounded-full object-cover transition-all duration-500 border border-gray-100 shadow-sm"
+          />
+        </div>
         <h1 className="text-5xl font-bold tracking-tight mb-4">Desarrollador web full stack</h1>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
           Desarrollador full stack freelance que valora el detalle y la calidad. Siempre intento aprender y mejorar.
