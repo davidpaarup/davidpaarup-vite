@@ -127,7 +127,9 @@ const Resume: React.FC = () => {
               <h3 className="text-lg font-semibold">Grado en Ingeniería Informática</h3>
               <span className="text-sm text-gray-400">2015 — 2029</span>
             </div>
-            <p className="text-gray-500"><a target={"_blank"} href={"https://www.uam.es"} className="underline">UAM</a> (Madrid)</p>
+            <p className="text-gray-500">
+              <a target={"_blank"} href={"https://www.uam.es"} className="underline">UAM</a> (Madrid, España)
+            </p>
           </div>
         </div>
       </section>
