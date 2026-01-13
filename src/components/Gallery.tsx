@@ -58,7 +58,7 @@ const Gallery: React.FC = () => {
       <section className="mb-12">
         <h1 className="text-4xl font-bold tracking-tight mb-4">Galería de dibujos</h1>
           <p className="text-gray-500 max-w-xl">
-              Una selección de mis dibujos artísticos
+              Una selección de mis dibujos
           </p>
       </section>
 
