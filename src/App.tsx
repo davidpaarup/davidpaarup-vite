@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Resume from './components/Resume'
 import Gallery from './components/Gallery'
@@ -6,6 +6,10 @@ import Footer from './components/Footer'
 
 function App() {
   const [activeTab, setActiveTab] = useState('cv')
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [activeTab])
 
   return (
     <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white">
