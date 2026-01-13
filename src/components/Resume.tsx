@@ -5,7 +5,13 @@ const Resume: React.FC = () => {
     {
       title: 'AI prompt (2025)',
       description: 'Plataforma que permite al usuario chatear con una interfaz que tiene acceso a parte del ecosistema Microsoft del usuario.',
-      tags: ['Next.js', 'Better Auth', 'Semantic Kernel', 'Microsoft Graph'],
+      tags: ['Next.js',
+        'Better Auth',
+        'Semantic Kernel',
+        'Microsoft Graph',
+        'Terraform',
+        'GitHub Actions',
+        'Microsoft Azure'],
       url: 'http://ai-prompt-mice.vercel.app/'
     },
     {
@@ -23,7 +29,7 @@ const Resume: React.FC = () => {
     {
       title: 'Urban Sketchers (2025)',
       description: 'Sitio web que podría ser usado por un grupo de Urban Sketchers.',
-      tags: ['Builder.io'],
+      tags: ['Builder.io', 'Sanity', 'Vite', 'React'],
       url: 'https://urban-sketchers.vercel.app/'
     },
     {
