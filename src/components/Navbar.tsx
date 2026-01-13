@@ -8,13 +8,13 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
         <div className="flex gap-8 text-sm font-medium">
           <button 
             onClick={() => setActiveTab('cv')}
-            className={`${activeTab === 'cv' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors`}
+            className={`${activeTab === 'cv' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
           >
             CURRÍCULUM
           </button>
           <button 
             onClick={() => setActiveTab('gallery')}
-            className={`${activeTab === 'gallery' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors`}
+            className={`${activeTab === 'gallery' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
           >
             DIBUJOS
           </button>
