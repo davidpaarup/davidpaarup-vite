@@ -106,7 +106,7 @@ const Resume: React.FC = () => {
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
-              <h3 className="text-xl font-semibold">Ingeniero de software</h3>
+              <h3 className="text-xl font-semibold">Desarrollador full stack</h3>
               <span className="text-sm text-gray-400">2019 — 2022</span>
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a> - Copenhague</p>
