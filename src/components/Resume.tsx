@@ -126,7 +126,7 @@ const Resume: React.FC = () => {
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
-              <h3 className="text-xl font-semibold">Ingeniero de software</h3>
+              <h3 className="text-xl font-semibold">Desarrollador</h3>
               <span className="text-sm text-gray-400">2018 — 2019</span>
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a> (tiempo parcial) - Madrid</p>
@@ -144,7 +144,7 @@ const Resume: React.FC = () => {
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
-              <h3 className="text-xl font-semibold">Desarrollador de software</h3>
+              <h3 className="text-xl font-semibold">Desarrollador</h3>
               <span className="text-sm text-gray-400">2018</span>
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.flexxible.com"} className="underline">Flexxible</a> (prácticas) - Madrid</p>
