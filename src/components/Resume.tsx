@@ -63,7 +63,7 @@ const Resume: React.FC = () => {
             <span>1992</span>
           </div>
           <div className="flex items-center gap-2">
-            <span>Valencia, España</span>
+            <span>Valencia</span>
           </div>
         </div>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
@@ -80,7 +80,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">Desarrollador full stack</h3>
               <span className="text-sm text-gray-400">2025 — Presente</span>
             </div>
-            <p className="text-gray-600 mb-4">Autónomo (Valencia, España)</p>
+            <p className="text-gray-600 mb-4">Autónomo (Valencia)</p>
             <p className="text-gray-500 leading-relaxed">
               Proyectos en modalidad freelance.
             </p>
@@ -90,7 +90,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">Desarrollador full stack</h3>
               <span className="text-sm text-gray-400">2022 — 2025</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://letsreg.com"} className="underline">LetsReg</a> (Oslo, Noruega)</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://letsreg.com"} className="underline">LetsReg</a> (Oslo)</p>
             <p className="text-gray-500 leading-relaxed mb-4">
               Desarrollo de la aplicación web de gestión de eventos y servicios auxiliares.
             </p>
@@ -109,7 +109,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">Ingeniero de software</h3>
               <span className="text-sm text-gray-400">2019 — 2022</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a> (Copenhague, Dinamarca)</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a> (Copenhague)</p>
             <p className="text-gray-500 leading-relaxed mb-4">
               Diseño y desarrollo de una aplicación web y servicios auxiliares para la gestión de préstamos a
               proyectos y productos sostenibles.
@@ -129,7 +129,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">Ingeniero de software</h3>
               <span className="text-sm text-gray-400">2018 — 2019</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a> (tiempo parcial) (Madrid, España)</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a> (tiempo parcial) (Madrid)</p>
             <p className="text-gray-500 leading-relaxed mb-4">
               Conversión de scripts extensos en microservicios y estudio de viavilidad de tecnologías para aplicarlas
               en la empresa.
@@ -147,7 +147,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">Desarrollador de software</h3>
               <span className="text-sm text-gray-400">2018</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.flexxible.com"} className="underline">Flexxible</a> (prácticas) (Madrid, España)</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.flexxible.com"} className="underline">Flexxible</a> (prácticas) (Madrid)</p>
             <p className="text-gray-500 leading-relaxed mb-4">
               Automatización de la configuración y despliegue de máquinas virtuales.
             </p>
@@ -169,7 +169,7 @@ const Resume: React.FC = () => {
               <span className="text-sm text-gray-400">2015 — 2029</span>
             </div>
             <p className="text-gray-500">
-              <a target={"_blank"} href={"https://www.uam.es"} className="underline">UAM</a> (Madrid, España)
+              <a target={"_blank"} href={"https://www.uam.es"} className="underline">UAM</a> (Madrid)
             </p>
           </div>
         </div>
