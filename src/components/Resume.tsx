@@ -35,7 +35,7 @@ const Resume: React.FC = () => {
     {
       title: 'Esta web (2025)',
       description: 'Sitio web en el que me expongo al público.',
-      tags: ['Vite', 'React', 'Vercel'],
+      tags: ['Vite', 'React', 'Vercel', 'Tailwind', 'Sanity'],
       url: '#'
     },
     {
