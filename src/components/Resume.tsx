@@ -92,7 +92,7 @@ const Resume: React.FC = () => {
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://letsreg.com"} className="underline">LetsReg</a> (Oslo, Noruega)</p>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Diseño y desarrollo de la aplicación web y servicios.
+              Desarrollo de la aplicación web de gestión de eventos y servicios auxiliares.
             </p>
             <div className="flex flex-wrap gap-4">
               <span className="text-xs font-medium text-gray-400">Angular</span>
@@ -111,7 +111,8 @@ const Resume: React.FC = () => {
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a> (Copenhague, Dinamarca)</p>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Diseño y desarrollo de una aplicación web y servicios relacionados con la sostenibilidad.
+              Diseño y desarrollo de una aplicación web y servicios auxiliares para la gestión de préstamos a
+              proyectos y productos sostenibles.
             </p>
             <div className="flex flex-wrap gap-4">
               <span className="text-xs font-medium text-gray-400">Angular</span>
@@ -130,7 +131,8 @@ const Resume: React.FC = () => {
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a> (tiempo parcial) (Madrid, España)</p>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Conversión de scripts extensos en microservicios y estudio de nuevas tecnologías.
+              Conversión de scripts extensos en microservicios y estudio de viavilidad de tecnologías para aplicarlas
+              en la empresa.
             </p>
             <div className="flex flex-wrap gap-4">
               <span className="text-xs font-medium text-gray-400">Python</span>
