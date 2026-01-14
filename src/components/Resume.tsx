@@ -11,7 +11,7 @@ const Resume: React.FC = () => {
         'Microsoft Graph',
         'Terraform',
         'GitHub Actions',
-        'Microsoft Azure'],
+        'Azure'],
       url: 'http://ai-prompt-mice.vercel.app/'
     },
     {
@@ -91,9 +91,18 @@ const Resume: React.FC = () => {
               <span className="text-sm text-gray-400">2022 — 2025</span>
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://letsreg.com"} className="underline">LetsReg</a> (Oslo, Noruega)</p>
-            <p className="text-gray-500 leading-relaxed">
-              Diseño y desarrollo de la aplicación web y servicios usando Angular, .NET, MSSQL, Kubernetes y Azure.
+            <p className="text-gray-500 leading-relaxed mb-4">
+              Diseño y desarrollo de la aplicación web y servicios.
             </p>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-xs font-medium text-gray-400">Angular</span>
+              <span className="text-xs font-medium text-gray-400">.NET</span>
+              <span className="text-xs font-medium text-gray-400">MSSQL</span>
+              <span className="text-xs font-medium text-gray-400">Kubernetes</span>
+              <span className="text-xs font-medium text-gray-400">Azure</span>
+              <span className="text-xs font-medium text-gray-400">Stripe</span>
+              <span className="text-xs font-medium text-gray-400">IIS</span>
+            </div>
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
@@ -101,10 +110,18 @@ const Resume: React.FC = () => {
               <span className="text-sm text-gray-400">2019 — 2022</span>
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a> (Copenhague, Dinamarca)</p>
-            <p className="text-gray-500 leading-relaxed">
-              Diseño y desarrollo de una aplicación web y servicios relacionados con la sostenibilidad usando Angular,
-              .NET y MSSQL.
+            <p className="text-gray-500 leading-relaxed mb-4">
+              Diseño y desarrollo de una aplicación web y servicios relacionados con la sostenibilidad.
             </p>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-xs font-medium text-gray-400">Angular</span>
+              <span className="text-xs font-medium text-gray-400">.NET</span>
+              <span className="text-xs font-medium text-gray-400">MSSQL</span>
+              <span className="text-xs font-medium text-gray-400">Octopus Deploy</span>
+              <span className="text-xs font-medium text-gray-400">Azure DevOps</span>
+              <span className="text-xs font-medium text-gray-400">ServiceNow</span>
+              <span className="text-xs font-medium text-gray-400">IIS</span>
+            </div>
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
@@ -112,10 +129,16 @@ const Resume: React.FC = () => {
               <span className="text-sm text-gray-400">2018 — 2019</span>
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a> (tiempo parcial) (Madrid, España)</p>
-            <p className="text-gray-500 leading-relaxed">
-              Creación de módulos a partir de scripts de Bash extensos utilizando Python, convirtiéndolos en
-              microservicios orquestados por Kubernetes.
+            <p className="text-gray-500 leading-relaxed mb-4">
+              Conversión de scripts extensos en microservicios y estudio de nuevas tecnologías.
             </p>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-xs font-medium text-gray-400">Python</span>
+              <span className="text-xs font-medium text-gray-400">Kubernetes</span>
+              <span className="text-xs font-medium text-gray-400">Bash</span>
+              <span className="text-xs font-medium text-gray-400">Apache Kafka</span>
+              <span className="text-xs font-medium text-gray-400">OpenShift</span>
+            </div>
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
@@ -123,9 +146,13 @@ const Resume: React.FC = () => {
               <span className="text-sm text-gray-400">2018</span>
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.flexxible.com"} className="underline">Flexxible</a> (prácticas) (Madrid, España)</p>
-            <p className="text-gray-500 leading-relaxed">
-              Automatización de la configuración y despliegue de máquinas virtuales usando Chef y VMware.
+            <p className="text-gray-500 leading-relaxed mb-4">
+              Automatización de la configuración y despliegue de máquinas virtuales.
             </p>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-xs font-medium text-gray-400">Chef</span>
+              <span className="text-xs font-medium text-gray-400">VMware</span>
+            </div>
           </div>
         </div>
       </section>
