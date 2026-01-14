@@ -36,7 +36,7 @@ const Resume: React.FC = () => {
       title: 'Esta web (2025)',
       description: 'Sitio web en el que me expongo al público.',
       tags: ['Vite', 'React', 'Vercel'],
-      url: 'https://davidpaarup.com/'
+      url: '#'
     },
     {
       title: 'Alex Lomart (2019)',
