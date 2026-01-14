@@ -15,7 +15,7 @@ const Gallery: React.FC = () => {
   useEffect(() => {
     const fetchDrawings = async () => {
       try {
-        const query = `*[_type == "drawing"]{
+        const query = `*[_type == "drawing"] | order(_createdAt desc) {
             _id,
             title,
             description,
