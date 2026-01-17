@@ -1,12 +1,5 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-
-type Language = 'es' | 'en';
-
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
-}
+import React, {type ReactNode, useEffect, useState} from 'react';
+import {type Language, LanguageContext} from "./UseLanguage";
 
 const translations = {
   es: {
@@ -103,10 +96,8 @@ const translations = {
   }
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('es');
+  const [language, setLanguage] = useState<Language>('en');
 
   useEffect(() => {
     const browserLang = navigator.language.split('-')[0];
@@ -116,7 +107,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   }, []);
 
   const t = (key: string): string => {
-    return (translations[language] as any)[key] || key;
+    return (translations[language] as never)[key] || key;
   };
 
   return (
@@ -126,10 +117,3 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   );
 };
 
-export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
-};

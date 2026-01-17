@@ -1,5 +1,6 @@
 import React from 'react';
-import { useLanguage } from '../context/LanguageContext';
+
+import {useLanguage} from "../context/UseLanguage.tsx";
 
 const Resume: React.FC = () => {
   const { t } = useLanguage();

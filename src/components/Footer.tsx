@@ -1,5 +1,6 @@
 import React from 'react';
-import { useLanguage } from '../context/LanguageContext';
+
+import {useLanguage} from "../context/UseLanguage.tsx";
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();

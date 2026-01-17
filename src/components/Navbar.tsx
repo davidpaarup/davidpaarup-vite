@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../context/LanguageContext';
+
+import {useLanguage} from "../context/UseLanguage.tsx";
 
 const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void }> = ({ activeTab, setActiveTab }) => {
   const { language, setLanguage, t } = useLanguage();
