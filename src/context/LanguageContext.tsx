@@ -142,7 +142,7 @@ const translations = {
     'resume.proj2_title': 'Møbelproducent (2025)',
     'resume.proj3_title': 'Fotoportfolio (2025)',
     'resume.proj4_title': 'Urban Sketchers (2025)',
-    'resume.this_web': 'Denne web (2025)',
+    'resume.this_web': 'Denne webside (2025)',
     'resume.proj6_title': 'Alex Lomart (2019)',
     'resume.this_web_desc': 'Hjemmeside, hvor jeg præsenterer mig selv for offentligheden.',
     'resume.ai_prompt_desc': 'Platform, der lader brugere chatte med en grænseflade, der har adgang til dele af brugerens Microsoft-økosystem.',
