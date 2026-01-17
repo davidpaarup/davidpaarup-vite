@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface Drawing {
   _id: string;
@@ -8,6 +9,7 @@ interface Drawing {
 }
 
 const Gallery: React.FC = () => {
+  const { t } = useLanguage();
   const [drawings, setDrawings] = useState<Drawing[]>([]);
   const [selectedDrawing, setSelectedDrawing] = useState<Drawing | null>(null);
   const [loading, setLoading] = useState(true);
@@ -57,7 +59,7 @@ const Gallery: React.FC = () => {
   if (loading) {
     return (
       <div className="max-w-6xl mx-auto px-6 pt-32 pb-20 flex justify-center items-center min-h-[50vh]">
-        <p className="text-gray-500">Cargando galería...</p>
+        <p className="text-gray-500">{t('gallery.loading')}</p>
       </div>
     );
   }
@@ -65,7 +67,7 @@ const Gallery: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto px-6 pt-32 pb-20">
       <section className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Galería de dibujos</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-4">{t('gallery.title')}</h1>
       </section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

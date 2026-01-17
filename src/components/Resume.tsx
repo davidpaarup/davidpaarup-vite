@@ -1,10 +1,13 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Resume: React.FC = () => {
+  const { t } = useLanguage();
+  
   const projects = [
     {
       title: 'AI prompt (2025)',
-      description: 'Plataforma que permite al usuario chatear con una interfaz que tiene acceso a parte del ecosistema Microsoft del usuario.',
+      description: t('resume.ai_prompt_desc'),
       tags: ['Next.js',
         'Better Auth',
         'Semantic Kernel',
@@ -16,31 +19,31 @@ const Resume: React.FC = () => {
     },
     {
       title: 'Fabricante de muebles (2025)',
-      description: 'Sitio web que podría ser utilizado por un fabricante de muebles.',
+      description: t('resume.furniture_desc'),
       tags: ['Builder.io', 'Vercel', 'Vite', 'React', 'Tailwind'],
       url: 'https://furniture-maker.vercel.app/'
     },
     {
       title: 'Portafolio de fotografía (2025)',
-      description: 'Sitio web que podría ser usado por un fotógrafo.',
+      description: t('resume.photography_desc'),
       tags: ['Builder.io', 'Vercel', 'Strapi', 'React', 'Tailwind'],
       url: 'https://photography-portfolio-nine-nu.vercel.app/'
     },
     {
       title: 'Urban Sketchers (2025)',
-      description: 'Sitio web que podría ser usado por un grupo de Urban Sketchers.',
+      description: t('resume.urban_desc'),
       tags: ['Builder.io', 'Sanity', 'Vite', 'React', 'Vercel', 'Tailwind'],
       url: 'https://urban-sketchers.vercel.app/'
     },
     {
-      title: 'Esta web (2025)',
-      description: 'Sitio web en el que me expongo al público.',
+      title: t('resume.this_web'),
+      description: t('resume.this_web_desc'),
       tags: ['Vite', 'React', 'Vercel', 'Tailwind', 'Sanity'],
       url: '#'
     },
     {
       title: 'Alex Lomart (2019)',
-      description: 'Portafolio de un fotógrafo profesional.',
+      description: t('resume.alex_desc'),
       tags: ['Wordpress', 'Google Cloud'],
       url: 'https://alexlomart.com/'
     }
@@ -57,42 +60,42 @@ const Resume: React.FC = () => {
             className="w-48 h-48 rounded-full object-cover transition-all duration-500 border border-gray-100 shadow-sm"
           />
         </div>
-        <h1 className="text-5xl font-bold tracking-tight mb-4">Desarrollador web full stack freelance</h1>
+        <h1 className="text-5xl font-bold tracking-tight mb-4">{t('resume.title')}</h1>
         <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-gray-400 mb-6">
           <div className="flex items-center gap-2">
             <span>1992</span>
           </div>
           <div className="flex items-center gap-2">
-            <span>Valencia</span>
+            <span>{t('resume.location')}</span>
           </div>
         </div>
         <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-          Atención al detalle y entrega de calidad. Siempre en proceso de aprendizaje.
+          {t('resume.hero_desc')}
         </p>
       </section>
 
       {/* Experience */}
       <section className="mb-20">
-        <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Experiencia</h2>
+        <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">{t('resume.experience')}</h2>
         <div className="space-y-12">
           <div>
             <div className="flex justify-between items-baseline mb-2">
-              <h3 className="text-xl font-semibold">Desarrollador full stack</h3>
-              <span className="text-sm text-gray-400">2025 — Presente</span>
+              <h3 className="text-xl font-semibold">{t('resume.exp1_title')}</h3>
+              <span className="text-sm text-gray-400">2025 — {t('resume.present')}</span>
             </div>
-            <p className="text-gray-600 mb-4">Autónomo - Valencia</p>
+            <p className="text-gray-600 mb-4">{t('resume.exp1_company')}</p>
             <p className="text-gray-500 leading-relaxed">
-              Proyectos en modalidad freelance.
+              {t('resume.exp1_desc')}
             </p>
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
-              <h3 className="text-xl font-semibold">Desarrollador full stack</h3>
+              <h3 className="text-xl font-semibold">{t('resume.exp2_title')}</h3>
               <span className="text-sm text-gray-400">2022 — 2025</span>
             </div>
             <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://letsreg.com"} className="underline">LetsReg</a> - Oslo</p>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Desarrollo de la aplicación web de gestión de eventos y servicios auxiliares.
+              {t('resume.exp2_desc')}
             </p>
             <div className="flex flex-wrap gap-4">
               <span className="text-xs font-medium text-gray-400">Angular</span>
@@ -106,13 +109,12 @@ const Resume: React.FC = () => {
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
-              <h3 className="text-xl font-semibold">Desarrollador full stack</h3>
+              <h3 className="text-xl font-semibold">{t('resume.exp3_title')}</h3>
               <span className="text-sm text-gray-400">2019 — 2022</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a> - Copenhague</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a> - {t('resume.exp3_company').split(' - ')[1]}</p>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Diseño y desarrollo de una aplicación web y servicios auxiliares para la gestión de préstamos a
-              proyectos y productos sostenibles.
+              {t('resume.exp3_desc')}
             </p>
             <div className="flex flex-wrap gap-4">
               <span className="text-xs font-medium text-gray-400">Angular</span>
@@ -126,13 +128,12 @@ const Resume: React.FC = () => {
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
-              <h3 className="text-xl font-semibold">Desarrollador</h3>
+              <h3 className="text-xl font-semibold">{t('resume.exp4_title')}</h3>
               <span className="text-sm text-gray-400">2018 — 2019</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a> (tiempo parcial) - Madrid</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a> {t('resume.exp4_company').includes('part-time') ? '(part-time)' : '(tiempo parcial)'} - Madrid</p>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Conversión de scripts extensos en microservicios y estudio de viavilidad de tecnologías para aplicarlas
-              en la empresa.
+              {t('resume.exp4_desc')}
             </p>
             <div className="flex flex-wrap gap-4">
               <span className="text-xs font-medium text-gray-400">Python</span>
@@ -144,12 +145,12 @@ const Resume: React.FC = () => {
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-2">
-              <h3 className="text-xl font-semibold">Desarrollador</h3>
+              <h3 className="text-xl font-semibold">{t('resume.exp5_title')}</h3>
               <span className="text-sm text-gray-400">2018</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.flexxible.com"} className="underline">Flexxible</a> (prácticas) - Madrid</p>
+            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.flexxible.com"} className="underline">Flexxible</a> {t('resume.exp5_company').includes('internship') ? '(internship)' : '(prácticas)'} - Madrid</p>
             <p className="text-gray-500 leading-relaxed mb-4">
-              Automatización de la configuración y despliegue de máquinas virtuales.
+              {t('resume.exp5_desc')}
             </p>
             <div className="flex flex-wrap gap-4">
               <span className="text-xs font-medium text-gray-400">Chef</span>
@@ -161,11 +162,11 @@ const Resume: React.FC = () => {
 
       {/* Education */}
       <section className="mb-20">
-        <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Educación</h2>
+        <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">{t('resume.education')}</h2>
         <div className="space-y-8">
           <div>
             <div className="flex justify-between items-baseline mb-1">
-              <h3 className="text-lg font-semibold">Grado en Ingeniería Informática</h3>
+              <h3 className="text-lg font-semibold">{t('resume.edu1_title')}</h3>
               <span className="text-sm text-gray-400">2015 — 2029</span>
             </div>
             <p className="text-gray-500">
@@ -178,7 +179,7 @@ const Resume: React.FC = () => {
       {/* Skills & Languages */}
       <div className="grid md:grid-cols-2 gap-20 mb-20">
         <section>
-          <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Habilidades</h2>
+          <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">{t('resume.skills')}</h2>
           <div className="flex flex-wrap gap-2">
             {['Angular', '.NET', 'SQL', 'Kubernetes', 'Azure'].map(skill => (
               <span key={skill} className="px-3 py-1 bg-gray-50 text-gray-600 rounded-full text-sm border border-gray-100">
@@ -188,19 +189,19 @@ const Resume: React.FC = () => {
           </div>
         </section>
         <section>
-          <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Lenguas</h2>
+          <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">{t('resume.languages')}</h2>
           <div className="space-y-4">
             <div className="flex justify-between">
-              <span className="text-gray-600">Español</span>
-              <span className="text-gray-400 text-sm">Nativo</span>
+              <span className="text-gray-600">{t('resume.lang_es')}</span>
+              <span className="text-gray-400 text-sm">{t('resume.lang_es_level')}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Inglés</span>
-              <span className="text-gray-400 text-sm">Avanzado</span>
+              <span className="text-gray-600">{t('resume.lang_en')}</span>
+              <span className="text-gray-400 text-sm">{t('resume.lang_en_level')}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Danés</span>
-              <span className="text-gray-400 text-sm">Avanzado</span>
+              <span className="text-gray-600">{t('resume.lang_da')}</span>
+              <span className="text-gray-400 text-sm">{t('resume.lang_da_level')}</span>
             </div>
           </div>
         </section>
@@ -208,7 +209,7 @@ const Resume: React.FC = () => {
 
       {/* Projects */}
       <section className="mb-20">
-        <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Proyectos Destacados</h2>
+        <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">{t('resume.projects')}</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <a 

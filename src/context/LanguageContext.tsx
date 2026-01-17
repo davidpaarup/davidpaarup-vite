@@ -1,0 +1,135 @@
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+
+type Language = 'es' | 'en';
+
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;
+}
+
+const translations = {
+  es: {
+    'nav.resume': 'CURRÍCULUM',
+    'nav.gallery': 'DIBUJOS',
+    'resume.title': 'Desarrollador web full stack freelance',
+    'resume.location': 'Valencia',
+    'resume.hero_desc': 'Atención al detalle y entrega de calidad. Siempre en proceso de aprendizaje.',
+    'resume.experience': 'Experiencia',
+    'resume.exp1_title': 'Desarrollador full stack',
+    'resume.exp1_company': 'Autónomo - Valencia',
+    'resume.exp1_desc': 'Proyectos en modalidad freelance.',
+    'resume.exp2_title': 'Desarrollador full stack',
+    'resume.exp2_company': 'LetsReg - Oslo',
+    'resume.exp2_desc': 'Desarrollo de la aplicación web de gestión de eventos y servicios auxiliares.',
+    'resume.exp3_title': 'Desarrollador full stack',
+    'resume.exp3_company': 'Danske Bank - Copenhague',
+    'resume.exp3_desc': 'Diseño y desarrollo de una aplicación web y servicios auxiliares para la gestión de préstamos a proyectos y productos sostenibles.',
+    'resume.exp4_title': 'Desarrollador',
+    'resume.exp4_company': 'IIC (tiempo parcial) - Madrid',
+    'resume.exp4_desc': 'Conversión de scripts extensos en microservicios y estudio de viavilidad de tecnologías para aplicarlas en la empresa.',
+    'resume.exp5_title': 'Desarrollador',
+    'resume.exp5_company': 'Flexxible (prácticas) - Madrid',
+    'resume.exp5_desc': 'Automatización de la configuración y despliegue de máquinas virtuales.',
+    'resume.education': 'Educación',
+    'resume.edu1_title': 'Grado en Ingeniería Informática',
+    'resume.edu1_company': 'UAM - Madrid',
+    'resume.skills': 'Habilidades',
+    'resume.languages': 'Lenguas',
+    'resume.lang_es': 'Español',
+    'resume.lang_es_level': 'Nativo',
+    'resume.lang_en': 'Inglés',
+    'resume.lang_en_level': 'Avanzado',
+    'resume.lang_da': 'Danés',
+    'resume.lang_da_level': 'Avanzado',
+    'resume.projects': 'Proyectos Destacados',
+    'resume.this_web': 'Esta web (2025)',
+    'resume.this_web_desc': 'Sitio web en el que me expongo al público.',
+    'resume.ai_prompt_desc': 'Plataforma que permite al usuario chatear con una interfaz que tiene acceso a parte del ecosistema Microsoft del usuario.',
+    'resume.furniture_desc': 'Sitio web que podría ser utilizado por un fabricante de muebles.',
+    'resume.photography_desc': 'Sitio web que podría ser usado por un fotógrafo.',
+    'resume.urban_desc': 'Sitio web que podría ser usado por un grupo de Urban Sketchers.',
+    'resume.alex_desc': 'Portafolio de un fotógrafo profesional.',
+    'resume.present': 'Presente',
+    'gallery.title': 'Galería de dibujos',
+    'gallery.loading': 'Cargando galería...',
+    'footer.copy': '© {year} David Paarup',
+  },
+  en: {
+    'nav.resume': 'RESUME',
+    'nav.gallery': 'DRAWINGS',
+    'resume.title': 'Freelance full stack web developer',
+    'resume.location': 'Valencia',
+    'resume.hero_desc': 'Attention to detail and quality delivery. Always in a learning process.',
+    'resume.experience': 'Experience',
+    'resume.exp1_title': 'Full stack developer',
+    'resume.exp1_company': 'Freelance - Valencia',
+    'resume.exp1_desc': 'Freelance projects.',
+    'resume.exp2_title': 'Full stack developer',
+    'resume.exp2_company': 'LetsReg - Oslo',
+    'resume.exp2_desc': 'Development of web application for event management and auxiliary services.',
+    'resume.exp3_title': 'Full stack developer',
+    'resume.exp3_company': 'Danske Bank - Copenhagen',
+    'resume.exp3_desc': 'Design and development of a web application and auxiliary services for managing loans to sustainable projects and products.',
+    'resume.exp4_title': 'Developer',
+    'resume.exp4_company': 'IIC (part-time) - Madrid',
+    'resume.exp4_desc': 'Conversion of extensive scripts into microservices and feasibility study of technologies for implementation in the company.',
+    'resume.exp5_title': 'Developer',
+    'resume.exp5_company': 'Flexxible (internship) - Madrid',
+    'resume.exp5_desc': 'Automation of configuration and deployment of virtual machines.',
+    'resume.education': 'Education',
+    'resume.edu1_title': 'BSc in Computer Engineering',
+    'resume.edu1_company': 'UAM - Madrid',
+    'resume.skills': 'Skills',
+    'resume.languages': 'Languages',
+    'resume.lang_es': 'Spanish',
+    'resume.lang_es_level': 'Native',
+    'resume.lang_en': 'English',
+    'resume.lang_en_level': 'Advanced',
+    'resume.lang_da': 'Danish',
+    'resume.lang_da_level': 'Advanced',
+    'resume.projects': 'Featured Projects',
+    'resume.this_web': 'This web (2025)',
+    'resume.this_web_desc': 'Website where I expose myself to the public.',
+    'resume.ai_prompt_desc': 'Platform that allows users to chat with an interface that has access to part of the user\'s Microsoft ecosystem.',
+    'resume.furniture_desc': 'Website that could be used by a furniture manufacturer.',
+    'resume.photography_desc': 'Website that could be used by a photographer.',
+    'resume.urban_desc': 'Website that could be used by an Urban Sketchers group.',
+    'resume.alex_desc': 'Portfolio of a professional photographer.',
+    'resume.present': 'Present',
+    'gallery.title': 'Drawings gallery',
+    'gallery.loading': 'Loading gallery...',
+    'footer.copy': '© {year} David Paarup',
+  }
+};
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [language, setLanguage] = useState<Language>('es');
+
+  useEffect(() => {
+    const browserLang = navigator.language.split('-')[0];
+    if (browserLang === 'en' || browserLang === 'es') {
+      setLanguage(browserLang as Language);
+    }
+  }, []);
+
+  const t = (key: string): string => {
+    return (translations[language] as any)[key] || key;
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+};
