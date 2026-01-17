@@ -16,4 +16,4 @@ interface LanguageContextType {
     t: (key: string) => string;
 }
 
-export type Language = 'es' | 'en';
+export type Language = 'es' | 'en' | 'da';

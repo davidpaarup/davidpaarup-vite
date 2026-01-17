@@ -55,6 +55,12 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
                 >
                   EN
                 </button>
+                <button 
+                  onClick={() => { setLanguage('da'); setIsDropdownOpen(false); }}
+                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
+                >
+                  DA
+                </button>
               </div>
             )}
           </div>

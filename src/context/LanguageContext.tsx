@@ -93,6 +93,52 @@ const translations = {
     'gallery.title': 'Drawings gallery',
     'gallery.loading': 'Loading gallery...',
     'footer.copy': '© {year} David Paarup',
+  },
+  da: {
+    'nav.resume': 'CV',
+    'nav.gallery': 'TEGNINGER',
+    'resume.title': 'Freelance full stack webudvikler',
+    'resume.location': 'Valencia',
+    'resume.hero_desc': 'Opmærksomhed på detaljer og levering af høj kvalitet. Altid i en læreproces.',
+    'resume.experience': 'Erfaring',
+    'resume.exp1_title': 'Full stack udvikler',
+    'resume.exp1_company': 'Freelance - Valencia',
+    'resume.exp1_desc': 'Freelance projekter.',
+    'resume.exp2_title': 'Full stack udvikler',
+    'resume.exp2_company': 'LetsReg - Oslo',
+    'resume.exp2_desc': 'Udvikling af webapplikation til eventstyring og hjælpetjenester.',
+    'resume.exp3_title': 'Full stack udvikler',
+    'resume.exp3_company': 'Danske Bank - København',
+    'resume.exp3_desc': 'Design og udvikling af en webapplikation og hjælpetjenester til administration af lån til bæredygtige projekter og produkter.',
+    'resume.exp4_title': 'Udvikler',
+    'resume.exp4_company': 'IIC (deltid) - Madrid',
+    'resume.exp4_desc': 'Konvertering af omfattende scripts til mikrotjenester og gennemførlighedsstudie af teknologier til implementering i virksomheden.',
+    'resume.exp5_title': 'Udvikler',
+    'resume.exp5_company': 'Flexxible (praktik) - Madrid',
+    'resume.exp5_desc': 'Automatisering af konfiguration og udrulning af virtuelle maskiner.',
+    'resume.education': 'Uddannelse',
+    'resume.edu1_title': 'BSc i datalogi',
+    'resume.edu1_company': 'UAM - Madrid',
+    'resume.skills': 'Færdigheder',
+    'resume.languages': 'Sprog',
+    'resume.lang_es': 'Spansk',
+    'resume.lang_es_level': 'Modersmål',
+    'resume.lang_en': 'Engelsk',
+    'resume.lang_en_level': 'Avanceret',
+    'resume.lang_da': 'Dansk',
+    'resume.lang_da_level': 'Avanceret',
+    'resume.projects': 'Udvalgte Projekter',
+    'resume.this_web': 'Denne web (2025)',
+    'resume.this_web_desc': 'Hjemmeside, hvor jeg præsenterer mig selv for offentligheden.',
+    'resume.ai_prompt_desc': 'Platform, der lader brugere chatte med en grænseflade, der har adgang til dele af brugerens Microsoft-økosystem.',
+    'resume.furniture_desc': 'Hjemmeside, der kunne bruges af en møbelproducent.',
+    'resume.photography_desc': 'Hjemmeside, der kunne bruges af en fotograf.',
+    'resume.urban_desc': 'Hjemmeside, der kunne bruges af en Urban Sketchers-gruppe.',
+    'resume.alex_desc': 'Portfolio for en professionel fotograf.',
+    'resume.present': 'Nuværende',
+    'gallery.title': 'Galleri med tegninger',
+    'gallery.loading': 'Indlæser galleri...',
+    'footer.copy': '© {year} David Paarup',
   }
 };
 
@@ -101,6 +147,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const browserLang = navigator.language.split('-')[0];
     if (browserLang === 'es') {
       return 'es';
+    }
+    if (browserLang === 'da') {
+      return 'da';
     }
     return 'en';
   });
