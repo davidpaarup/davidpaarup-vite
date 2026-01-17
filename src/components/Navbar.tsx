@@ -26,9 +26,17 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
           <div className="relative">
             <button 
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="text-gray-400 hover:text-black transition-colors cursor-pointer uppercase"
+              className="text-gray-400 hover:text-black transition-colors cursor-pointer uppercase flex items-center gap-1"
             >
               {language}
+              <svg 
+                className={`w-3 h-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md">
