@@ -1,4 +1,4 @@
-import React, {type ReactNode, useEffect, useState} from 'react';
+import React, {type ReactNode, useState} from 'react';
 import {type Language, LanguageContext} from "./UseLanguage";
 
 const translations = {
@@ -97,14 +97,13 @@ const translations = {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
-
-  useEffect(() => {
+  const [language, setLanguage] = useState<Language>(() => {
     const browserLang = navigator.language.split('-')[0];
-    if (browserLang === 'en' || browserLang === 'es') {
-      setLanguage(browserLang as Language);
+    if (browserLang === 'es') {
+      return 'es';
     }
-  }, []);
+    return 'en';
+  });
 
   const t = (key: string): string => {
     return (translations[language] as never)[key] || key;
