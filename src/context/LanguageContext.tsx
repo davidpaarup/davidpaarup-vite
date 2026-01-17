@@ -91,7 +91,7 @@ const translations = {
     'resume.proj2_title': 'Furniture maker (2025)',
     'resume.proj3_title': 'Photography portfolio (2025)',
     'resume.proj4_title': 'Urban Sketchers (2025)',
-    'resume.this_web': 'This web (2025)',
+    'resume.this_web': 'This website (2025)',
     'resume.proj6_title': 'Alex Lomart (2019)',
     'resume.this_web_desc': 'Website where I expose myself to the public.',
     'resume.ai_prompt_desc': 'Platform that allows users to chat with an interface that has access to part of the user\'s Microsoft ecosystem.',
