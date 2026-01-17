@@ -51,17 +51,17 @@ const Resume: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-6 pt-32 pb-20">
+    <div className="max-w-4xl mx-auto px-6 pt-24 md:pt-32 pb-20">
       {/* Hero Section */}
       <section className="mb-20">
         <div className="mb-8">
           <img 
             src="https://omjnwfhxgcqx4oig.public.blob.vercel-storage.com/perfil.jpeg"
             alt="David Paarup" 
-            className="w-48 h-48 rounded-full object-cover transition-all duration-500 border border-gray-100 shadow-sm"
+            className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover transition-all duration-500 border border-gray-100 shadow-sm"
           />
         </div>
-        <h1 className="text-5xl font-bold tracking-tight mb-4">{t('resume.title')}</h1>
+        <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">{t('resume.title')}</h1>
         <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-gray-400 mb-6">
           <div className="flex items-center gap-2">
             <span>1992</span>
@@ -80,7 +80,7 @@ const Resume: React.FC = () => {
         <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">{t('resume.experience')}</h2>
         <div className="space-y-12">
           <div>
-            <div className="flex justify-between items-baseline mb-2">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-2">
               <h3 className="text-xl font-semibold">{t('resume.exp1_title')}</h3>
               <span className="text-sm text-gray-400">2025 — {t('resume.present')}</span>
             </div>
@@ -90,7 +90,7 @@ const Resume: React.FC = () => {
             </p>
           </div>
           <div>
-            <div className="flex justify-between items-baseline mb-2">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-2">
               <h3 className="text-xl font-semibold">{t('resume.exp2_title')}</h3>
               <span className="text-sm text-gray-400">2022 — 2025</span>
             </div>
@@ -109,7 +109,7 @@ const Resume: React.FC = () => {
             </div>
           </div>
           <div>
-            <div className="flex justify-between items-baseline mb-2">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-2">
               <h3 className="text-xl font-semibold">{t('resume.exp3_title')}</h3>
               <span className="text-sm text-gray-400">2019 — 2022</span>
             </div>
@@ -128,7 +128,7 @@ const Resume: React.FC = () => {
             </div>
           </div>
           <div>
-            <div className="flex justify-between items-baseline mb-2">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-2">
               <h3 className="text-xl font-semibold">{t('resume.exp4_title')}</h3>
               <span className="text-sm text-gray-400">2018 — 2019</span>
             </div>
@@ -145,7 +145,7 @@ const Resume: React.FC = () => {
             </div>
           </div>
           <div>
-            <div className="flex justify-between items-baseline mb-2">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-2">
               <h3 className="text-xl font-semibold">{t('resume.exp5_title')}</h3>
               <span className="text-sm text-gray-400">2018</span>
             </div>
@@ -166,7 +166,7 @@ const Resume: React.FC = () => {
         <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">{t('resume.education')}</h2>
         <div className="space-y-8">
           <div>
-            <div className="flex justify-between items-baseline mb-1">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline mb-1">
               <h3 className="text-lg font-semibold">{t('resume.edu1_title')}</h3>
               <span className="text-sm text-gray-400">2015 — 2029</span>
             </div>

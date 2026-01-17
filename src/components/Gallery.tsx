@@ -59,14 +59,14 @@ const Gallery: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="max-w-6xl mx-auto px-6 pt-32 pb-20 flex justify-center items-center min-h-[50vh]">
+      <div className="max-w-6xl mx-auto px-6 pt-24 md:pt-32 pb-20 flex justify-center items-center min-h-[50vh]">
         <p className="text-gray-500">{t('gallery.loading')}</p>
       </div>
     );
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-6 pt-32 pb-20">
+    <div className="max-w-6xl mx-auto px-6 pt-24 md:pt-32 pb-20">
       <section className="mb-12">
         <h1 className="text-4xl font-bold tracking-tight mb-4">{t('gallery.title')}</h1>
       </section>
