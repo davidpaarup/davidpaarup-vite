@@ -23,6 +23,8 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
             {t('nav.gallery')}
           </button>
           
+          <div className="w-px h-4 bg-gray-200 mx-2"></div>
+
           <div className="relative">
             <button 
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
