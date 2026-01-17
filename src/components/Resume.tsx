@@ -7,7 +7,7 @@ const Resume: React.FC = () => {
   
   const projects = [
     {
-      title: 'AI prompt (2025)',
+      title: t('resume.proj1_title'),
       description: t('resume.ai_prompt_desc'),
       tags: ['Next.js',
         'Better Auth',
@@ -19,19 +19,19 @@ const Resume: React.FC = () => {
       url: 'http://ai-prompt-mice.vercel.app/'
     },
     {
-      title: 'Fabricante de muebles (2025)',
+      title: t('resume.proj2_title'),
       description: t('resume.furniture_desc'),
       tags: ['Builder.io', 'Vercel', 'Vite', 'React', 'Tailwind'],
       url: 'https://furniture-maker.vercel.app/'
     },
     {
-      title: 'Portafolio de fotografía (2025)',
+      title: t('resume.proj3_title'),
       description: t('resume.photography_desc'),
       tags: ['Builder.io', 'Vercel', 'Strapi', 'React', 'Tailwind'],
       url: 'https://photography-portfolio-nine-nu.vercel.app/'
     },
     {
-      title: 'Urban Sketchers (2025)',
+      title: t('resume.proj4_title'),
       description: t('resume.urban_desc'),
       tags: ['Builder.io', 'Sanity', 'Vite', 'React', 'Vercel', 'Tailwind'],
       url: 'https://urban-sketchers.vercel.app/'
@@ -43,7 +43,7 @@ const Resume: React.FC = () => {
       url: '#'
     },
     {
-      title: 'Alex Lomart (2019)',
+      title: t('resume.proj6_title'),
       description: t('resume.alex_desc'),
       tags: ['Wordpress', 'Google Cloud'],
       url: 'https://alexlomart.com/'
