@@ -5,6 +5,7 @@ import {useLanguage} from "../context/UseLanguage.tsx";
 const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void }> = ({ activeTab, setActiveTab }) => {
   const { language, setLanguage, t } = useLanguage();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -29,10 +30,13 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
           
           <div className="w-px h-4 bg-gray-200 mx-2"></div>
 
-          <div className="relative">
+          <div 
+            className="relative group"
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
+          >
             <button 
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="text-gray-400 hover:text-black transition-colors cursor-pointer uppercase flex items-center gap-1"
+              className="text-gray-400 group-hover:text-black transition-colors cursor-pointer uppercase flex items-center gap-1"
             >
               {language}
               <svg 
@@ -44,8 +48,8 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md">
+            <div className="absolute right-0 top-full pt-2">
+              <div className="py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <button 
                   onClick={() => { setLanguage('es'); setIsDropdownOpen(false); }}
                   className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
@@ -65,7 +69,7 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
                   DA
                 </button>
               </div>
-            )}
+            </div>
           </div>
         </div>
 
@@ -73,12 +77,12 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
         <div className="md:hidden flex items-center gap-4">
           <div className="relative">
             <button 
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
               className="text-gray-400 hover:text-black transition-colors cursor-pointer uppercase flex items-center gap-1 text-sm font-medium"
             >
               {language}
               <svg 
-                className={`w-3 h-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
+                className={`w-3 h-3 transition-transform ${isMobileDropdownOpen ? 'rotate-180' : ''}`} 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -86,22 +90,22 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {isDropdownOpen && (
+            {isMobileDropdownOpen && (
               <div className="absolute right-0 mt-2 py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md">
                 <button 
-                  onClick={() => { setLanguage('es'); setIsDropdownOpen(false); }}
+                  onClick={() => { setLanguage('es'); setIsMobileDropdownOpen(false); }}
                   className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
                 >
                   ES
                 </button>
                 <button 
-                  onClick={() => { setLanguage('en'); setIsDropdownOpen(false); }}
+                  onClick={() => { setLanguage('en'); setIsMobileDropdownOpen(false); }}
                   className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
                 >
                   EN
                 </button>
                 <button 
-                  onClick={() => { setLanguage('da'); setIsDropdownOpen(false); }}
+                  onClick={() => { setLanguage('da'); setIsMobileDropdownOpen(false); }}
                   className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
                 >
                   DA
