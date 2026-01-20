@@ -15,7 +15,7 @@ const Resume: React.FC = () => {
         'Microsoft Graph',
         'Terraform',
         'GitHub Actions',
-        'Azure'],
+        'Azure container apps'],
       url: 'http://ai-prompt-mice.vercel.app/'
     },
     {
