@@ -48,8 +48,8 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className="absolute right-0 top-full pt-2">
-              <div className="py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div className={`absolute right-0 top-full pt-2 ${isDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-200`}>
+              <div className="py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md">
                 <button 
                   onClick={() => { setLanguage('es'); setIsDropdownOpen(false); }}
                   className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
