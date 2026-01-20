@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import {useLanguage} from "../context/UseLanguage.tsx";
 
@@ -7,6 +7,31 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileDropdownRef.current && !mobileDropdownRef.current.contains(event.target as Node)) {
+        setIsMobileDropdownOpen(false);
+      }
+    };
+
+    const handleScroll = () => {
+      if (isMobileDropdownOpen) {
+        setIsMobileDropdownOpen(false);
+      }
+    };
+
+    if (isMobileDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMobileDropdownOpen]);
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
@@ -75,7 +100,7 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-4">
-          <div className="relative">
+          <div className="relative" ref={mobileDropdownRef}>
             <button 
               onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
               className="text-gray-400 hover:text-black transition-colors cursor-pointer uppercase flex items-center gap-1 text-sm font-medium"
