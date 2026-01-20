@@ -52,19 +52,19 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
               <div className="py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <button 
                   onClick={() => { setLanguage('es'); setIsDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
                 >
                   ES
                 </button>
                 <button 
                   onClick={() => { setLanguage('en'); setIsDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
                 >
                   EN
                 </button>
                 <button 
                   onClick={() => { setLanguage('da'); setIsDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
                 >
                   DA
                 </button>
@@ -94,19 +94,19 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
               <div className="absolute right-0 mt-2 py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md">
                 <button 
                   onClick={() => { setLanguage('es'); setIsMobileDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
                 >
                   ES
                 </button>
                 <button 
                   onClick={() => { setLanguage('en'); setIsMobileDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
                 >
                   EN
                 </button>
                 <button 
                   onClick={() => { setLanguage('da'); setIsMobileDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
                 >
                   DA
                 </button>
