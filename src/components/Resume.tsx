@@ -6,6 +6,15 @@ const Resume: React.FC = () => {
   const { t } = useLanguage();
   
   const projects = [
+    /*{
+      title: t('resume.proj7_title'),
+      description: t('resume.renfe_cercanias_desc'),
+      tags: ['Django',
+        'Elastic Beanstalk',
+        'Supabase',
+        'GTFS'],
+      url: 'http://django-env.eba-5wfkpdmg.eu-west-3.elasticbeanstalk.com'
+    },*/
     {
       title: t('resume.proj1_title'),
       description: t('resume.ai_prompt_desc'),
