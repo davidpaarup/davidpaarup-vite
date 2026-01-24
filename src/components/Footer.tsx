@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           {/* <a href="https://www.linkedin.com/in/davidpaarup/" target={"_blank"} className="text-gray-400 hover:text-black transition-colors">LinkedIn</a> */}
           {/* <a href="https://github.com/davidpaarup" target={"_blank"} className="text-gray-400 hover:text-black transition-colors">GitHub</a> */}
           {/* <a href="https://www.instagram.com/davidpaarup/" target={"_blank"} className="text-gray-400 hover:text-black transition-colors">Instagram</a> */}
-          <a href="mailto:hola@davidpaarup.es" className="text-gray-400 hover:text-black transition-colors">
+          <a href="mailto:hola@davidpaarup.com" className="text-gray-400 hover:text-black transition-colors">
             Envíame un correo
           </a>
         </div>
