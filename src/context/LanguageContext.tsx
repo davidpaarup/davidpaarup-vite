@@ -54,6 +54,7 @@ const translations = {
     'gallery.title': 'Galería de dibujos',
     'gallery.loading': 'Cargando galería...',
     'footer.copy': '© {year} David Paarup',
+    'footer.send_email': 'Mándame un correo',
   },
   en: {
     'nav.resume': 'RESUME',
@@ -107,6 +108,7 @@ const translations = {
     'gallery.title': 'Drawings gallery',
     'gallery.loading': 'Loading gallery...',
     'footer.copy': '© {year} David Paarup',
+    'footer.send_email': 'Send me an email',
   },
   da: {
     'nav.resume': 'CV',
@@ -160,6 +162,7 @@ const translations = {
     'gallery.title': 'Galleri med tegninger',
     'gallery.loading': 'Indlæser galleri...',
     'footer.copy': '© {year} David Paarup',
+    'footer.send_email': 'Send mig en mail',
   }
 };
 
@@ -179,8 +182,14 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     return (translations[language] as never)[key] || key;
   };
 
+  const showCV = false; // Flag to show or hide CV
+  const showLanguageSelector = false; // Flag to show or hide language selector
+  const showGallery = false; // Flag to show or hide drawings button
+  const showOnlyEmail = true; // Flag to show only email link
+  const showCopyright = false; // Flag to show or hide copyright
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, showCV, showLanguageSelector, showGallery, showOnlyEmail, showCopyright }}>
       {children}
     </LanguageContext.Provider>
   );

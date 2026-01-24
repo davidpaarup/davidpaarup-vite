@@ -10,7 +10,7 @@ interface Drawing {
 }
 
 const Gallery: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, showGallery } = useLanguage();
   const [drawings, setDrawings] = useState<Drawing[]>([]);
   const [selectedDrawing, setSelectedDrawing] = useState<Drawing | null>(null);
   const [loading, setLoading] = useState(true);
@@ -67,9 +67,11 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-6 pt-24 md:pt-32 pb-20">
-      <section className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">{t('gallery.title')}</h1>
-      </section>
+      {showGallery && (
+        <section className="mb-12">
+          <h1 className="text-4xl font-bold tracking-tight mb-4">{t('gallery.title')}</h1>
+        </section>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {drawings.map((drawing) => (

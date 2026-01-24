@@ -3,7 +3,7 @@ import React from 'react';
 import {useLanguage} from "../context/UseLanguage.tsx";
 
 const Resume: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, showOnlyEmail } = useLanguage();
   
   const projects = [
     /*{
@@ -103,7 +103,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">{t('resume.exp2_title')}</h3>
               <span className="text-sm text-gray-400">2022 — 2025</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://letsreg.com"} className="underline">LetsReg</a> - Oslo</p>
+            <p className="text-gray-600 mb-4">{showOnlyEmail ? 'LetsReg' : <a target={"_blank"} href={"https://letsreg.com"} className="underline">LetsReg</a>} - Oslo</p>
             <p className="text-gray-500 leading-relaxed mb-4">
               {t('resume.exp2_desc')}
             </p>
@@ -122,7 +122,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">{t('resume.exp3_title')}</h3>
               <span className="text-sm text-gray-400">2019 — 2022</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a> - {t('resume.exp3_company').split(' - ')[1]}</p>
+            <p className="text-gray-600 mb-4">{showOnlyEmail ? 'Danske Bank' : <a target={"_blank"} href={"https://danskebank.com"} className="underline">Danske Bank</a>} - {t('resume.exp3_company').split(' - ')[1]}</p>
             <p className="text-gray-500 leading-relaxed mb-4">
               {t('resume.exp3_desc')}
             </p>
@@ -141,7 +141,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">{t('resume.exp4_title')}</h3>
               <span className="text-sm text-gray-400">2018 — 2019</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a> {t('resume.exp4_company').includes('part-time') ? '(part-time)' : '(tiempo parcial)'} - Madrid</p>
+            <p className="text-gray-600 mb-4">{showOnlyEmail ? 'IIC' : <a target={"_blank"} href={"https://www.iic.uam.es"} className="underline">IIC</a>} {t('resume.exp4_company').includes('part-time') ? '(part-time)' : '(tiempo parcial)'} - Madrid</p>
             <p className="text-gray-500 leading-relaxed mb-4">
               {t('resume.exp4_desc')}
             </p>
@@ -158,7 +158,7 @@ const Resume: React.FC = () => {
               <h3 className="text-xl font-semibold">{t('resume.exp5_title')}</h3>
               <span className="text-sm text-gray-400">2018</span>
             </div>
-            <p className="text-gray-600 mb-4"><a target={"_blank"} href={"https://www.flexxible.com"} className="underline">Flexxible</a> {t('resume.exp5_company').includes('internship') ? '(internship)' : '(prácticas)'} - Madrid</p>
+            <p className="text-gray-600 mb-4">{showOnlyEmail ? 'Flexxible' : <a target={"_blank"} href={"https://www.flexxible.com"} className="underline">Flexxible</a>} {t('resume.exp5_company').includes('internship') ? '(internship)' : '(prácticas)'} - Madrid</p>
             <p className="text-gray-500 leading-relaxed mb-4">
               {t('resume.exp5_desc')}
             </p>
@@ -180,7 +180,7 @@ const Resume: React.FC = () => {
               <span className="text-sm text-gray-400">2015 — 2029</span>
             </div>
             <p className="text-gray-500">
-              <a target={"_blank"} href={"https://www.uam.es"} className="underline">UAM</a> - Madrid
+              {showOnlyEmail ? 'UAM' : <a target={"_blank"} href={"https://www.uam.es"} className="underline">UAM</a>} - Madrid
             </p>
           </div>
         </div>
@@ -221,25 +221,44 @@ const Resume: React.FC = () => {
       <section className="mb-20">
         <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">{t('resume.projects')}</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <a 
-              key={index}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group border border-gray-100 p-8 rounded-2xl hover:bg-gray-50 transition-colors block cursor-pointer"
-            >
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-500 text-sm mb-4 leading-relaxed">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                {project.tags.map(tag => (
-                  <span key={tag} className="text-xs font-medium text-gray-400">{tag}</span>
-                ))}
-              </div>
-            </a>
-          ))}
+          {projects.map((project, index) => {
+            const CardContent = (
+              <>
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-gray-500 text-sm mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="text-xs font-medium text-gray-400">{tag}</span>
+                  ))}
+                </div>
+              </>
+            );
+
+            if (showOnlyEmail || project.url === '#') {
+              return (
+                <div 
+                  key={index}
+                  className="group border border-gray-100 p-8 rounded-2xl transition-colors block"
+                >
+                  {CardContent}
+                </div>
+              );
+            }
+
+            return (
+              <a 
+                key={index}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border border-gray-100 p-8 rounded-2xl hover:bg-gray-50 transition-colors block cursor-pointer"
+              >
+                {CardContent}
+              </a>
+            );
+          })}
         </div>
       </section>
     </div>

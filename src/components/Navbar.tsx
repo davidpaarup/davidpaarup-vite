@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {useLanguage} from "../context/UseLanguage.tsx";
 
 const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void }> = ({ activeTab, setActiveTab }) => {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage, t, showCV, showLanguageSelector, showGallery } = useLanguage();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,104 +40,114 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 text-sm font-medium items-center">
-          <button 
-            onClick={() => setActiveTab('cv')}
-            className={`${activeTab === 'cv' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
-          >
-            {t('nav.resume')}
-          </button>
-          <button 
-            onClick={() => setActiveTab('gallery')}
-            className={`${activeTab === 'gallery' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
-          >
-            {t('nav.gallery')}
-          </button>
-          
-          <div className="w-px h-4 bg-gray-200 mx-2"></div>
-
-          <div 
-            className="relative group"
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
-          >
+          {showCV && (
             <button 
-              className="text-gray-400 group-hover:text-black transition-colors cursor-pointer uppercase flex items-center gap-1"
+              onClick={() => setActiveTab('cv')}
+              className={`${activeTab === 'cv' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
             >
-              {language}
-              <svg 
-                className={`w-3 h-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+              {t('nav.resume')}
             </button>
-            <div className={`absolute right-0 top-full pt-2 ${isDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-200`}>
-              <div className="py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md">
+          )}
+          {showGallery && (
+            <button 
+              onClick={() => setActiveTab('gallery')}
+              className={`${activeTab === 'gallery' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
+            >
+              {t('nav.gallery')}
+            </button>
+          )}
+          
+          {showLanguageSelector && (
+            <>
+              <div className="w-px h-4 bg-gray-200 mx-2"></div>
+
+              <div 
+                className="relative group"
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
                 <button 
-                  onClick={() => { setLanguage('es'); setIsDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  className="text-gray-400 group-hover:text-black transition-colors cursor-pointer uppercase flex items-center gap-1"
                 >
-                  ES
+                  {language}
+                  <svg 
+                    className={`w-3 h-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
-                <button 
-                  onClick={() => { setLanguage('en'); setIsDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
-                >
-                  EN
-                </button>
-                <button 
-                  onClick={() => { setLanguage('da'); setIsDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
-                >
-                  DA
-                </button>
+                <div className={`absolute right-0 top-full pt-2 ${isDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-200`}>
+                  <div className="py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md">
+                    <button 
+                      onClick={() => { setLanguage('es'); setIsDropdownOpen(false); }}
+                      className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
+                    >
+                      ES
+                    </button>
+                    <button 
+                      onClick={() => { setLanguage('en'); setIsDropdownOpen(false); }}
+                      className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
+                    >
+                      EN
+                    </button>
+                    <button 
+                      onClick={() => { setLanguage('da'); setIsDropdownOpen(false); }}
+                      className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
+                    >
+                      DA
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-4">
-          <div className="relative" ref={mobileDropdownRef}>
-            <button 
-              onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
-              className="text-gray-400 hover:text-black transition-colors cursor-pointer uppercase flex items-center gap-1 text-sm font-medium"
-            >
-              {language}
-              <svg 
-                className={`w-3 h-3 transition-transform ${isMobileDropdownOpen ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+          {showLanguageSelector && (
+            <div className="relative" ref={mobileDropdownRef}>
+              <button 
+                onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+                className="text-gray-400 hover:text-black transition-colors cursor-pointer uppercase flex items-center gap-1 text-sm font-medium"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {isMobileDropdownOpen && (
-              <div className="absolute right-0 mt-2 py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md">
-                <button 
-                  onClick={() => { setLanguage('es'); setIsMobileDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
+                {language}
+                <svg 
+                  className={`w-3 h-3 transition-transform ${isMobileDropdownOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
                 >
-                  ES
-                </button>
-                <button 
-                  onClick={() => { setLanguage('en'); setIsMobileDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
-                >
-                  EN
-                </button>
-                <button 
-                  onClick={() => { setLanguage('da'); setIsMobileDropdownOpen(false); }}
-                  className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
-                >
-                  DA
-                </button>
-              </div>
-            )}
-          </div>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isMobileDropdownOpen && (
+                <div className="absolute right-0 mt-2 py-2 w-20 bg-white border border-gray-100 shadow-xl rounded-md">
+                  <button 
+                    onClick={() => { setLanguage('es'); setIsMobileDropdownOpen(false); }}
+                    className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'es' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  >
+                    ES
+                  </button>
+                  <button 
+                    onClick={() => { setLanguage('en'); setIsMobileDropdownOpen(false); }}
+                    className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  >
+                    EN
+                  </button>
+                  <button 
+                    onClick={() => { setLanguage('da'); setIsMobileDropdownOpen(false); }}
+                    className={`block w-full px-4 py-1 text-left hover:bg-gray-50 cursor-pointer ${language === 'da' ? 'text-black font-bold' : 'text-gray-400'}`}
+                  >
+                    DA
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-gray-400 hover:text-black transition-colors cursor-pointer"
@@ -156,18 +166,22 @@ const Navbar: React.FC<{ activeTab: string, setActiveTab: (tab: string) => void 
       {/* Mobile Menu Content */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 py-4 px-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-4 duration-200">
-          <button 
-            onClick={() => { setActiveTab('cv'); setIsMobileMenuOpen(false); }}
-            className={`text-left text-sm font-medium ${activeTab === 'cv' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
-          >
-            {t('nav.resume')}
-          </button>
-          <button 
-            onClick={() => { setActiveTab('gallery'); setIsMobileMenuOpen(false); }}
-            className={`text-left text-sm font-medium ${activeTab === 'gallery' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
-          >
-            {t('nav.gallery')}
-          </button>
+          {showCV && (
+            <button 
+              onClick={() => { setActiveTab('cv'); setIsMobileMenuOpen(false); }}
+              className={`text-left text-sm font-medium ${activeTab === 'cv' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
+            >
+              {t('nav.resume')}
+            </button>
+          )}
+          {showGallery && (
+            <button 
+              onClick={() => { setActiveTab('gallery'); setIsMobileMenuOpen(false); }}
+              className={`text-left text-sm font-medium ${activeTab === 'gallery' ? 'text-black' : 'text-gray-400 hover:text-black'} transition-colors cursor-pointer`}
+            >
+              {t('nav.gallery')}
+            </button>
+          )}
         </div>
       )}
     </nav>

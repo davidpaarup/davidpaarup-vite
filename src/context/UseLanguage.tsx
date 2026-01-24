@@ -14,6 +14,11 @@ interface LanguageContextType {
     language: Language;
     setLanguage: (lang: Language) => void;
     t: (key: string) => string;
+    showCV: boolean;
+    showLanguageSelector: boolean;
+    showGallery: boolean;
+    showOnlyEmail: boolean;
+    showCopyright: boolean;
 }
 
 export type Language = 'es' | 'en' | 'da';
